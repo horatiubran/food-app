@@ -1,6 +1,6 @@
 import {LoginModal} from "../modals/login-modal"
 import {PrimaryModal} from "../modals/primary-modal"
-import {ShoppingModal} from "../shopping-cart/index"
+import {ShoppingCart} from "../shopping-cart/index"
 import {Link} from "react-router-dom";
 import {ShoppingCartModal} from "../modals/shoppingCart-modal";
 import {useDispatch, useSelector} from "react-redux";
@@ -38,7 +38,7 @@ export const Navbar = () => {
                         {isAuth && <a className="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#ShoppingCart">Shopping
                             Cart</a>}
                         <ShoppingCartModal title="Shopping Cart" id={"ShoppingCart"}>
-                            <ShoppingModal/>
+                            <ShoppingCart/>
                         </ShoppingCartModal>
                         {isAuth &&  <button type="button" className="btn btn-danger" onClick={logoutHandler}>
                             Log Out
