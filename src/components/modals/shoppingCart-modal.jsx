@@ -1,4 +1,5 @@
 export const ShoppingCartModal = ({
+                                 id,
                                  title = "defaultValue",
                                  children,
                                  onSave,
@@ -8,6 +9,7 @@ export const ShoppingCartModal = ({
         <div>
             <div
                 className="modal fade"
+                id={id}
                 tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
@@ -33,14 +35,14 @@ export const ShoppingCartModal = ({
                                 data-bs-dismiss="modal"
                                 onClick={onCancel}
                             >
-                                Close
+                                Continue shopping...
                             </button>
                             <button
                                 type="button"
                                 className="btn btn-primary"
                                 onClick={onSave}
                             >
-                                Send order!
+                                Complete Order!
                             </button>
                         </div>
                     </div>

@@ -38,7 +38,7 @@ export const Navbar = () => {
                         {isAuth && <a className="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#ShoppingCart">Shopping
                             Cart</a>}
                         <ShoppingCartModal title="Shopping Cart" id={"ShoppingCart"}>
-                            <ShoppingCart/>
+                            <ShoppingCart />
                         </ShoppingCartModal>
                         {isAuth &&  <button type="button" className="btn btn-danger" onClick={logoutHandler}>
                             Log Out

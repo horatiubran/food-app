@@ -16,34 +16,19 @@ export const ShoppingCart = (props) => {
         cartCtx.addItem(item)
     }
 
-    const cartItems = (
-        <ul>
-            {cartCtx.items.map((item) => (
-                <CartItem
-                    key={item.id}
-                    name={item.name}
-                    amount={item.amount}
-                    price={item.price}
-                    onRemove={() => cartItemRemoveHandler(item.id)}
-                    onAdd={() => cartItemAddHandler(item)}
-                />
-            ))}
-        </ul>
-    );
 
-    return (
-        <ShoppingCartModal onClose={props.onClose}>
-            {cartItems}
-            <div>
-                <span>Total Amount</span>
-                <span>{totalAmount}</span>
-            </div>
-            <div>
-                <button onClick={props.onClose}>
-                    Close
-                </button>
-                {hasItems && <button>Order</button>}
-            </div>
-        </ShoppingCartModal>
-    );
+    return <ul>
+        {cartCtx.items.map((item) => (
+            <CartItem
+                key={item.id}
+                name={item.name}
+                amount={item.amount}
+                price={item.price}
+                onRemove={() => cartItemRemoveHandler(item.id)}
+                onAdd={() => cartItemAddHandler(item)}
+            />
+        ))}
+    </ul>
+
+
 }
