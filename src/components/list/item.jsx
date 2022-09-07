@@ -1,5 +1,6 @@
 import {useContext} from "react";
 import CartContext from "../../store/context/cart-context";
+import {MealItemForm} from "../menu-list/MealItemForm";
 
 export const Item = ({id, foodName, description, price = 0}) => {
     const cartCtx = useContext(CartContext)
@@ -12,6 +13,7 @@ export const Item = ({id, foodName, description, price = 0}) => {
             amount,
             price
         })
+        console.log(cartCtx)
     }
 
 
@@ -21,14 +23,10 @@ export const Item = ({id, foodName, description, price = 0}) => {
             <div className="card-body">
                 <h5 className="card-title">{foodName}</h5>
                 <p className="card-text">{description}</p>
-                <p className="card-text">{price}</p>
+                <p className="card-text">$ {price}</p>
                 <div className="col-12">
-                    <div className="form-outline">
-                        <input type="number" id="typeNumber" className="form-control"/>
-                        <label className="form-label" htmlFor="typeNumber">Number input</label>
-                    </div>
+                    <MealItemForm onAddToCart={addToCartHandler} />
                 </div>
-                <button type="submit" onClick={addToCartHandler} className="btn btn-primary">Add to cart</button>
 
             </div>
         </div>
