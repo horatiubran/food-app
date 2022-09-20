@@ -17,11 +17,11 @@ export const ShoppingCart = (props) => {
     }
 
 
-    return <ul>
+    return <div><ul>
         {cartCtx.items.map((item) => (
             <CartItem
                 key={item.id}
-                name={item.name}
+                name={item.foodName}
                 amount={item.amount}
                 price={item.price}
                 onRemove={() => cartItemRemoveHandler(item.id)}
@@ -29,6 +29,8 @@ export const ShoppingCart = (props) => {
             />
         ))}
     </ul>
+        Total Amount: {totalAmount}
+    </div>
 
 
 }

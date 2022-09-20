@@ -11,7 +11,7 @@ export const Item = ({id, foodName, description, price = 0}) => {
             id,
             foodName,
             amount,
-            price
+            price: fixedPrice
         })
         console.log(cartCtx)
     }
