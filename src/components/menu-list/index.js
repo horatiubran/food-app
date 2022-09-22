@@ -1,4 +1,4 @@
-import {Item} from "../list/item";
+import {Item} from "../listComponents/item";
 import {menuItems} from "../../menudatabase/menu-db";
 
 
@@ -14,6 +14,7 @@ export const RenderedList = () => {
         />
     );
     console.log("key", renderedItems)
+
     return <ul>{renderedItems}</ul>
 };
 

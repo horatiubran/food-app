@@ -1,4 +1,4 @@
-import { List } from "./list";
+import { List } from "./listComponents";
 import { RenderedList } from "./menu-list";
 
 export const Components = () => {

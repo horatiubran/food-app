@@ -1,4 +1,4 @@
-import{useReducer} from "react";
+import {useReducer} from "react";
 
 import CartContext from "./cart-context";
 
@@ -10,8 +10,7 @@ const defaultCartState = {
 const cartReducer = (state, action) => {
     if (action.type === "ADD") {
         const updatedTotalAmount =
-            state.totalAmount + action.item.price * action.item.amount;
-        // console.log("amount", action.item.amount);
+            parseFloat(state.totalAmount) + parseFloat(action.item.price) * action.selectedAmount;
 
         const existingCartItemIndex = state.items.findIndex(
             (item) => item.id === action.item.id
@@ -22,7 +21,7 @@ const cartReducer = (state, action) => {
         if (existingCartItem) {
             const updatedItem = {
                 ...existingCartItem,
-                amount: existingCartItem.amount + action.item.amount,
+                amount: existingCartItem.amount++,
             };
             updatedItems = [...state.items];
             updatedItems[existingCartItemIndex] = updatedItem;
@@ -32,7 +31,7 @@ const cartReducer = (state, action) => {
 
         return {
             items: updatedItems,
-            totalAmount: updatedTotalAmount,
+            totalAmount: updatedTotalAmount.toFixed(2),
         };
     }
     if (action.type === "REMOVE") {
@@ -52,7 +51,7 @@ const cartReducer = (state, action) => {
 
         return {
             items: updatedItems,
-            totalAmount: updatedTotalAmount,
+            totalAmount: updatedTotalAmount.toFixed(2),
         };
     }
 
@@ -65,12 +64,12 @@ export const CartProvider = (props) => {
         defaultCartState
     );
 
-    const addItemToCartHandler = (item) => {
-        dispatchCartAction({type: "ADD", item: item});
+    const addItemToCartHandler = (item, selectedAmount = 1) => {
+        dispatchCartAction({type: "ADD", item, selectedAmount});
     };
 
     const removeItemFromCartHandler = (id) => {
-        dispatchCartAction({type: "REMOVE", id: id});
+        dispatchCartAction({type: "REMOVE", id});
     };
 
     const cartContext = {

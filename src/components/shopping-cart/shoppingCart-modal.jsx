@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export const ShoppingCartModal = ({
                                  id,
                                  title = "defaultValue",
@@ -37,13 +39,13 @@ export const ShoppingCartModal = ({
                             >
                                 Continue shopping...
                             </button>
-                            <button
+                            <Link
+                                to="../checkout"
                                 type="button"
                                 className="btn btn-primary"
-                                onClick={onSave}
                             >
                                 Complete Order!
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

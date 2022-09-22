@@ -1,6 +1,6 @@
-import {Field} from "../field"
+import {Field} from "./field"
 import {useDispatch} from "react-redux";
-import {authActions} from "../../../store/auth";
+import {authActions} from "../../store/auth";
 
 export const Login = () => {
     const dispatch = useDispatch()

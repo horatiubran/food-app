@@ -1,8 +1,8 @@
-import {LoginModal} from "../modals/login-modal"
+import {LoginModal} from "../login/login-modal"
 import {PrimaryModal} from "../modals/primary-modal"
 import {ShoppingCart} from "../shopping-cart/index"
 import {Link} from "react-router-dom";
-import {ShoppingCartModal} from "../modals/shoppingCart-modal";
+import {ShoppingCartModal} from "../shopping-cart/shoppingCart-modal";
 import {useDispatch, useSelector} from "react-redux";
 import { authActions} from "../../store/auth";
 
