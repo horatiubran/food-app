@@ -11,6 +11,8 @@ export const LoginWithGoogle = () => {
                         buttonText="Login with google"
                         onSuccess={responseGoogleOnSuccess}
                         onFailure={responseGoogleOnFail}
+                        cookiePolicy={'single_host_origin'}
+                        scope="profile"
                         />
 
 }

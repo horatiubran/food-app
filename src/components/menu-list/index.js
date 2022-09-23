@@ -13,7 +13,6 @@ export const RenderedList = () => {
             price={value.price}
         />
     );
-    console.log("key", renderedItems)
 
     return <ul>{renderedItems}</ul>
 };

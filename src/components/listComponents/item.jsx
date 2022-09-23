@@ -14,7 +14,6 @@ export const Item = ({id, foodName, description, price = 0}) => {
             amount,
             price: fixedPrice
         }, selectedAmount)
-        console.log(cartCtx)
     }
 
 

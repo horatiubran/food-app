@@ -1,4 +1,4 @@
-export const CheckoutForm = () => {
+export const CheckoutForm = ({onSubmit}) => {
     return <section className="intro">
         <div className="bg-image-vertical h-100">
             <div className="mask d-flex align-items-center h-100">
@@ -10,7 +10,7 @@ export const CheckoutForm = () => {
 
                                     <h1 className="mb-5 text-center">Checkout Form</h1>
 
-                                    <form>
+                                    <form onSubmit={onSubmit}>
                                         <div className="row">
                                             <div className="col-12 col-md-6 mb-4">
                                                 <div className="form-outline">
