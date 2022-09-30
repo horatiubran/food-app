@@ -1,5 +1,6 @@
+
 export const List = ({children}) => {
-    return <ul className="d-flex  justify-content-center">
+    return <ul className="list-group align-items-center">
         {children}
     </ul>
 }

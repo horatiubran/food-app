@@ -1,4 +1,4 @@
-import {Field} from "./field"
+import {Field} from "./Field"
 import {useDispatch} from "react-redux";
 import {authActions} from "../../store/auth";
 

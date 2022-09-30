@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import cartContext from "../../../store/context/cart-context";
 
-export const ConfirmOrder = () => {
+export const TotalAmount = () => {
     const cartCtx = useContext(cartContext)
 
     return <div className="card text-center">

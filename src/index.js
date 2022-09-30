@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -10,10 +10,29 @@ import {store} from "./store";
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
+const useFetchText = () => {
+    const [text, setText] = useState('...')
+
+    useEffect(() => {
+        setTimeout(() => setText('Salut'), 3000)
+    }, [])
+
+    return text
+}
+
+const Page = () => {
+    const text = useFetchText()
+
+    return <>
+        {text}
+    </>
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <Provider store={store}>
+            {/*<Page/>*/}
             <BrowserRouter>
                 <App/>
             </BrowserRouter>

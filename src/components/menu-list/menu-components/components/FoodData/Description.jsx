@@ -1,0 +1,1 @@
+export const Description = ({description}) => <p className="card-text">{description}</p>

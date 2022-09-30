@@ -1,0 +1,1 @@
+export const Title = ({foodName}) => <h5 className="card-title">{foodName}</h5>

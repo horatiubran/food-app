@@ -1,0 +1,1 @@
+export const BodyContainer = ({children}) => <div className="card-body">{children}</div>

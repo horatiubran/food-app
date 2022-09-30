@@ -1,0 +1,1 @@
+export const MealItemFormContainer = ({children}) => <div className="col-12">{children}</div>

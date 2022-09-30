@@ -1,20 +1,13 @@
-import {Item} from "../listComponents/item";
-import {menuItems} from "../../menudatabase/menu-db";
+import {RenderedItems} from "./menu-components/components/RenderedItems";
+import {List} from "../listComponents";
+import {MenuTitle} from "./menu-components/components/MenuTitle";
 
 
-export const RenderedList = () => {
-
-    const renderedItems = menuItems.map((value) =>
-        <Item
-            key={value.id}
-            id={value.id}
-            foodName={value.name}
-            description={value.description}
-            price={value.price}
-        />
-    );
-
-    return <ul>{renderedItems}</ul>
-};
+export const MenuList = () => <>
+    <MenuTitle/>
+    <List>
+        <RenderedItems/>
+    </List>
+</>
 
 

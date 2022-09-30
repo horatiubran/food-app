@@ -1,0 +1,1 @@
+export const MenuTitle = () => <h1>Please take a closer look to our menu</h1>

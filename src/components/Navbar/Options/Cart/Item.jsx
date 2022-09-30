@@ -1,4 +1,4 @@
-export const CartItem = ({id, name, price, amount, onRemove, onAdd}) => {
+export const Item = ({id, name, price, amount, onRemove, onAdd}) => {
 
 
     return <ol className="list-group list-group-flush">

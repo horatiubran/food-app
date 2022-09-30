@@ -1,13 +1,14 @@
+import {Item} from "./Item";
 import {useContext} from "react";
-import CartContext from "../../store/context/cart-context";
-import {CartItem} from "./CartItem";
+import CartContext from "../../../../store/context/cart-context";
 
-export const ShoppingCart = (props) => {
+export const Items = () => {
     const cartCtx = useContext(CartContext)
 
     const cartItemRemoveHandler = item => {
         cartCtx.removeItem(item.id);
     }
+
     const cartItemAddHandler = (item) => {
         cartCtx.addItem(item)
     }
@@ -16,7 +17,7 @@ export const ShoppingCart = (props) => {
     return <div><ul>
         {cartCtx.items.length === 0 && <p>Shopping cart is empty. Please select food from the foodmenu</p>}
         {cartCtx.items.map((item) => (
-            <CartItem
+            <Item
                 key={item.id}
                 name={item.foodName}
                 amount={item.amount}

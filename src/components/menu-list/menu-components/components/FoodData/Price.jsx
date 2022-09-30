@@ -1,0 +1,1 @@
+export const Price = ({price}) => <p className="card-text">$ {price}</p>
